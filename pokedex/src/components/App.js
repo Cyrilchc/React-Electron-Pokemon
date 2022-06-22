@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { Card, CardContent, Button, Grid, Typography, LinearProgress, Dialog, DialogTitle, DialogContent, DialogActions, TextField } 
-from '@mui/material'
+import { Card, CardContent, Button, Grid, Typography, LinearProgress, Dialog, DialogTitle, DialogContent, DialogActions, TextField }
+  from '@mui/material'
 
 import './styles/App.css';
 
@@ -227,6 +227,19 @@ function App() {
                             }
                           </ul>
 
+                          <Typography variant="body1">
+                            Techniques :
+                          </Typography>
+                          <ul>
+                            {
+                              pokemonDetails.abilities.map((abilityEntry) => (
+                                <li>
+                                  <Typography variant="body2">{abilityEntry.ability.name}</Typography>
+                                </li>
+                              ))
+                            }
+                          </ul>
+
                           <hr />
                           <div style={{ display: 'inline-flex', gap: '10px' }}>
                             <Button onClick={() => removeFromFavorites(pokemon)} color="error" variant="contained">Retirer des favoris</Button>
@@ -287,6 +300,19 @@ function App() {
                       pokemonDetails.types.map((typeEntry) => (
                         <li>
                           <Typography variant="body2">{typeEntry.type.name}</Typography>
+                        </li>
+                      ))
+                    }
+                  </ul>
+
+                  <Typography variant="body1">
+                    Techniques :
+                  </Typography>
+                  <ul>
+                    {
+                      pokemonDetails.abilities.map((abilityEntry) => (
+                        <li>
+                          <Typography variant="body2">{abilityEntry.ability.name}</Typography>
                         </li>
                       ))
                     }
